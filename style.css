@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/* || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    font: inherit;
+    width: 100%;
+    border: none;
+}
+
+/* || VARIABLES */
+
+:root {
+    /* FONTS */
+    --FF: 'Overpass', sans-serif;
+    --FW: 400;
+    --FW-HEAD: 700;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+
+    /* COLORS */
+    --BGCOLOR: hsl(216, 12%, 8%);
+    --BODY-BGCOLOR: hsl(213, 19%, 18%);
+    --CIRCLE-BGCOLOR: hsl(214, 13%, 25%);
+    --CIRCLE-BGCOLOR-HOVER: hsl(216, 12%, 54%);
+    --FONT-COLOR: hsl(217, 12%, 63%);
+    --FONT-COLOR-HEAD: hsl(0, 0%, 100%);
+    --THEME-COLOR: hsl(25, 97%, 53%);
+
+    /* BORDER */
+    --BORDER-RADUIS-HEAD: 20px;
+    --BORDER-RADUIS-CIRCLE: 50%;
+    --BORDER-RADUIS-BTN: var(--BORDER-RADUIS-HEAD);
+
+    /* PADDING & MARGIN */
+    --BODY-PADDING: 2rem;
+    --MARGIN: 1rem;
+
+}
+
+/* || UTILITY CLASSES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.center img,.center div {
+    margin-bottom: var(--MARGIN);
+}
+.center div {
+    background-color: var(--CIRCLE-BGCOLOR);
+    border-radius: var(--BORDER-RADUIS-BTN);
+    padding: 10px;
+    color: var(--THEME-COLOR);
+}
+
+
+/* || GENERAL STYLE */
+
+html{
+    font-size: var(--FS);
+    font-family: var(--FF);
+    background-color: var(--BGCOLOR);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--BODY-BGCOLOR);
+    color: var(--FONT-COLOR);
+    max-height: 80vh;
+    max-width: 80vw;
+    box-shadow: 0 0 5px var(--FONT-COLOR);
+    border-radius: var(--BORDER-RADUIS-HEAD);
+    padding: var(--BODY-PADDING);
+}
+
+h1 {
+    color: var(--FONT-COLOR-HEAD);
+    margin-bottom: var(--MARGIN);
+    font-weight: var(--FW-HEAD);
+}
+
+button {
+    color: var(--FONT-COLOR-HEAD);
+    padding: 10px;
+    border-radius: var(--BORDER-RADUIS-BTN);
+    background-color: var(--THEME-COLOR);
+    font-weight: var(--FW-HEAD);
+}
+
+button:hover {
+    background-color: var(--FONT-COLOR-HEAD);
+    color: var(--THEME-COLOR);
+}
+
+p{
+    line-height: 1.5;
+    margin-bottom: var(--MARGIN);
+}
+
+
+/* || CLASSES */ 
+
+.circle {
+    background-color: var(--CIRCLE-BGCOLOR);
+    height: 30px;
+    width: 30px;
+    border-radius: var(--BORDER-RADUIS-CIRCLE);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--MARGIN);
+}
+
+.rates {
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle:hover {
+    background-color: var(--CIRCLE-BGCOLOR-HOVER);
+    color: var(--FONT-COLOR-HEAD);
+}
+/* .active{
+    background-color: var(--THEME-COLOR);
+    color: var(--FONT-COLOR-HEAD);
+}
+.inactive{
+    background-color: var(--THEME-COLOR);
+    color: var(--FONT-COLOR-HEAD);
+} */
+
+
+@media screen and (min-width: 500px) {
+    body{
+        max-width: 450px;
+    }
+    .circle {
+        height: 50px;
+        width: 50px;
+    }
+}
